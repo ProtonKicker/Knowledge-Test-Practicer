@@ -168,6 +168,7 @@ DMV Written Test Practicer/
 ├── data/
 │   ├── question_repo.csv   # Your question database
 │   └── practice_log.csv    # Practice session history
+├── California Driver's Handbook.pdf  # Official CA DMV handbook (source: https://www.dmv.ca.gov/portal/file/california-driver-handbook-pdf/)
 └── requirements.txt        # Python dependencies
 ```
 
