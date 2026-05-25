@@ -236,6 +236,34 @@ DEFAULT_VALUES = {
 - [ ] Cloud sync for question repository
 - [ ] More DMV state-specific content
 
+## Deployment
+
+### Cloudflare Pages
+
+This project is a static single-page application ready for deployment on [Cloudflare Pages](https://pages.cloudflare.com/).
+
+**Deploy via Git (recommended):**
+1. Push this repo to GitHub/GitLab
+2. Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/) → Pages
+3. Click **Create a project** → **Connect to Git**
+4. Select your repository
+5. Configure:
+   - **Build command**: (leave empty — no build step needed)
+   - **Build output directory**: `.`
+   - **Root directory**: (leave as default `/`)
+6. Click **Deploy**
+
+**Deploy via Wrangler CLI:**
+```bash
+npx wrangler pages deploy . --project-name permit-practicer
+```
+
+**Project configuration files:**
+- `_headers` — Security headers and caching rules
+- `_redirects` — URL redirect rules
+
+The live site will be available at `https://<project-name>.pages.dev`.
+
 ## License
 
 This project is provided as-is for educational purposes.
