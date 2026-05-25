@@ -7,14 +7,13 @@
   <style>
     :root {
       --primary: #2563eb;
-      --primary-hover: #1d4ed8;
       --success: #16a34a;
       --danger: #dc2626;
-      --bg: #f9fafb;
+      --bg: #f5f5f5;
       --card: #ffffff;
-      --text: #111827;
-      --text-secondary: #6b7280;
-      --border: #e5e7eb;
+      --text: #1a1a1a;
+      --text-secondary: #888;
+      --border: #e0e0e0;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,171 +26,167 @@
     }
 
     header {
-      background: var(--primary);
-      color: white;
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 1px solid var(--border);
     }
 
-    header h1 { font-size: 1.25rem; font-weight: 600; }
-    header .badge { font-size: 0.875rem; opacity: 0.8; }
+    header h1 { font-size: 1.1rem; font-weight: 600; }
+    header .badge { font-size: 0.85rem; color: var(--text-secondary); }
 
     .main {
-      max-width: 800px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 2rem 1.5rem;
     }
 
-    /* Dashboard */
     .hero {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 2rem;
-      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    .hero h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .hero p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.25rem; }
-
-    .hero-controls {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-controls label { font-size: 1rem; color: var(--text-secondary); }
-    .hero-controls input[type="range"] { width: 160px; height: 6px; }
-    .hero-controls .count { font-size: 1.5rem; font-weight: 700; min-width: 32px; text-align: center; }
+    .hero h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+    .hero p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem; }
 
     .btn {
-      padding: 0.75rem 1.5rem;
+      padding: 0.7rem 1.4rem;
       border: none;
-      border-radius: 0.5rem;
-      font-size: 1rem;
+      border-radius: 0.4rem;
+      font-size: 0.95rem;
       font-weight: 500;
       cursor: pointer;
     }
 
     .btn-primary { background: var(--primary); color: white; }
-    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-primary:hover { opacity: 0.9; }
     .btn-secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
-    .btn-secondary:hover { background: var(--border); }
+    .btn-secondary:hover { background: #eaeaea; }
     .btn-danger { background: var(--danger); color: white; }
+    .btn-danger:hover { opacity: 0.9; }
     .btn-dontknow { background: transparent; color: var(--text-secondary); border: 1px dashed var(--border); }
     .btn-dontknow:hover { border-color: var(--text-secondary); color: var(--text); }
-    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
     .stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 2rem;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .stat {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
+      border-radius: 0.4rem;
+      padding: 1.25rem 0.75rem;
       text-align: center;
     }
 
-    .stat .value { font-size: 2rem; font-weight: 700; }
-    .stat .label { font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.25rem; }
+    .stat .value { font-size: 1.5rem; font-weight: 700; }
+    .stat .label { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.15rem; text-transform: uppercase; letter-spacing: 0.03em; }
 
     .quick-start {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
+      border-radius: 0.4rem;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    .quick-start h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+    .quick-start h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-secondary); }
 
-    .quick-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .quick-buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
 
     .quick-btn {
-      padding: 0.75rem 1.25rem;
+      padding: 0.65rem 1.1rem;
       background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      font-size: 1rem;
+      border-radius: 0.4rem;
+      font-size: 0.9rem;
       cursor: pointer;
+      color: var(--text);
     }
 
-    .quick-btn:hover { border-color: var(--primary); background: #eff6ff; }
+    .quick-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    .quick-btn-row {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .quick-btn-row + .quick-btn-row {
+      margin-top: 0.5rem;
+    }
 
     /* Test */
     .progress-bar {
       width: 100%;
-      height: 6px;
+      height: 4px;
       background: var(--border);
-      border-radius: 3px;
-      margin-bottom: 1.5rem;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
     }
 
     .progress-fill {
       height: 100%;
       background: var(--primary);
-      border-radius: 3px;
+      border-radius: 2px;
       transition: width 0.2s;
     }
 
     .question-card {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .question-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       color: var(--text-secondary);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
-    .question-text { font-size: 1.25rem; font-weight: 500; margin-bottom: 1.5rem; line-height: 1.5; }
+    .question-text { font-size: 1.15rem; font-weight: 500; margin-bottom: 1.25rem; line-height: 1.5; }
 
-    .options { display: flex; flex-direction: column; gap: 0.75rem; }
+    .options { display: flex; flex-direction: column; gap: 0.6rem; }
 
     .option-btn {
       display: flex;
       align-items: center;
-      padding: 1rem 1.25rem;
+      padding: 0.85rem 1rem;
       background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 0.5rem;
+      border-radius: 0.4rem;
       cursor: pointer;
       text-align: left;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.4;
     }
 
     .option-btn:hover:not(.disabled) { border-color: var(--primary); }
-    .option-btn.selected { border-color: var(--primary); background: #eff6ff; }
+    .option-btn.selected { border-color: var(--primary); background: #eef4ff; }
     .option-btn.correct { border-color: var(--success); background: #f0fdf4; }
     .option-btn.incorrect { border-color: var(--danger); background: #fef2f2; }
     .option-btn.disabled { cursor: default; }
 
     .option-letter {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       background: var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-right: 1rem;
+      margin-right: 0.85rem;
       flex-shrink: 0;
     }
 
@@ -200,10 +195,10 @@
     .option-btn.selected .option-letter { background: var(--primary); color: white; }
 
     .feedback {
-      margin-top: 1rem;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      font-size: 1rem;
+      margin-top: 0.75rem;
+      padding: 0.85rem 1rem;
+      border-radius: 0.4rem;
+      font-size: 0.9rem;
     }
 
     .feedback.correct { background: #f0fdf4; color: #166534; }
@@ -211,7 +206,7 @@
 
     .nav-row {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.6rem;
       align-items: center;
     }
 
@@ -220,31 +215,30 @@
     /* Results */
     .results-card {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 2.5rem 2rem;
-      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+      padding: 2rem 1.5rem;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
 
-    .results-card h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .results-card h2 { font-size: 1.25rem; margin-bottom: 0.75rem; }
 
     .score-display {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      margin: 1.25rem 0;
+      margin: 1rem 0;
     }
 
     .score-display.pass { color: var(--success); }
     .score-display.fail { color: var(--danger); }
 
     .verdict {
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-size: 1rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.4rem;
+      font-size: 0.9rem;
       font-weight: 600;
       display: inline-block;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .verdict.pass { background: #f0fdf4; color: var(--success); }
@@ -253,13 +247,13 @@
     .results-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
     }
 
     .results-table th,
     .results-table td {
-      padding: 0.75rem 1rem;
+      padding: 0.6rem 0.75rem;
       text-align: left;
       border-bottom: 1px solid var(--border);
     }
@@ -267,15 +261,15 @@
     .results-table th { color: var(--text-secondary); font-weight: 500; }
 
     .review-item {
-      padding: 1rem;
+      padding: 0.85rem 1rem;
       border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      margin-bottom: 0.75rem;
-      font-size: 1rem;
+      border-radius: 0.4rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
     }
 
-    .review-item .q { font-weight: 500; margin-bottom: 0.5rem; line-height: 1.4; }
-    .review-item .a { color: var(--text-secondary); line-height: 1.5; }
+    .review-item .q { font-weight: 500; margin-bottom: 0.4rem; line-height: 1.4; }
+    .review-item .a { color: var(--text-secondary); line-height: 1.5; font-size: 0.85rem; }
     .review-item .correct-text { color: var(--success); }
     .review-item .incorrect-text { color: var(--danger); }
 
@@ -283,7 +277,7 @@
       .stats-row { grid-template-columns: repeat(2, 1fr); }
       .main { padding: 1rem; }
       .hero, .question-card, .results-card { padding: 1.25rem; }
-      .question-text { font-size: 1.125rem; }
+      .question-text { font-size: 1.05rem; }
     }
   </style>
 </head>
@@ -373,10 +367,67 @@
       { origin: "Driving-Tests.org", question: "What is the correct hand signal for indicating a right turn?", options: ["Hand and arm extended upward", "Hand and arm extended outward", "Hand and arm extended downward"], correct: "Hand and arm extended upward" },
       { origin: "Driving-Tests.org", question: "Car drivers should NEVER", options: ["give a motorcycle the full lane.", "pass a motorcycle in the same lane.", "move to one side of your lane to give motorcyclists more room to pass."], correct: "pass a motorcycle in the same lane." },
       { origin: "Driving-Tests.org", question: "On two-lane highways, you are allowed to pass", options: ["while crossing or within 100 feet of a railroad crossing.", "when there is a broken yellow line on your side of the center dividing line.", "when you are approaching the top of a hill or are on a curve, and there is no clear view ahead."], correct: "when there is a broken yellow line on your side of the center dividing line." },
-      { origin: "Driving-Tests.org", question: "When you see an emergency vehicle with its lights flashing on the wrong side of the road, giving instructions through the loudspeaker, you should", options: ["proceed slowly.", "stop immediately on the spot.", "obey the instructions."], correct: "obey the instructions." }
+      { origin: "Driving-Tests.org", question: "When you see an emergency vehicle with its lights flashing on the wrong side of the road, giving instructions through the loudspeaker, you should", options: ["proceed slowly.", "stop immediately on the spot.", "obey the instructions."], correct: "obey the instructions." },
+      { origin: "Driving-Tests.org", question: "If a California driver with a provisional driver license gets a traffic ticket but doesn't pay the fine or appear in court,", options: ["his or her school will be notified.", "his or her license will be suspended.", "his or her parents will be notified."], correct: "his or her license will be suspended." },
+      { origin: "Driving-Tests.org", question: "When you approach an intersection with a through road but without stop signs or yield signs, you must", options: ["make a sharp turn to match the speed of traffic on the through road.", "accelerate to merge with traffic.", "yield to traffic and pedestrians on the through road."], correct: "yield to traffic and pedestrians on the through road." },
+      { origin: "Driving-Tests.org", question: "What is California's minimum age requirement for an adult driver license?", options: ["15", "21", "18"], correct: "18" },
+      { origin: "Driving-Tests.org", question: "What is the minimum age requirement for a minors' driver license in the state of CA?", options: ["15", "17", "16"], correct: "16" },
+      { origin: "Driving-Tests.org", question: "If a California driver with a provisional license has been involved in two \"at fault\" collisions within the first 12 months of holding the license, he or she must", options: ["return his or her license to the DMV.", "be supervised while driving for 30 days.", "pay a fine."], correct: "be supervised while driving for 30 days." },
+      { origin: "FirstTimeDriver.com", question: "Pedestrians at a crosswalk always have the right-of-way.", options: ["True", "False"], correct: "True" },
+      { origin: "FirstTimeDriver.com", question: "It is permitted to use advanced technologies like self-parking and back-up cameras on a driving test.", options: ["True", "False"], correct: "False" },
+      { origin: "FirstTimeDriver.com", question: "How many times more likely are you to survive a fatal crash by wearing a seat belt?", options: ["1-2 times", "2-3 times", "3-4 times", "4-5 times"], correct: "3-4 times" },
+      { origin: "FirstTimeDriver.com", question: "Around how many inches do airbags need to inflate?", options: ["5 inches.", "10 inches.", "15 inches.", "20 inches."], correct: "10 inches." },
+      { origin: "FirstTimeDriver.com", question: "Which of these is not a category of distracted driving?", options: ["Visual", "Audible", "Manual", "Cognitive"], correct: "Audible" },
+      { origin: "FirstTimeDriver.com", question: "A car can become how many degrees hotter than the air outside?", options: ["10-20 degrees", "20-30 degrees", "30-40 degrees", "40-50 degrees"], correct: "40-50 degrees" },
+      { origin: "FirstTimeDriver.com", question: "If an arrow light is flashing yellow, you must come to a complete stop and wait for it to turn green.", options: ["True", "False"], correct: "False" },
+      { origin: "FirstTimeDriver.com", question: "You must drive in a clockwise direction in a roundabout.", options: ["True", "False"], correct: "False" },
+      { origin: "FirstTimeDriver.com", question: "If two cars face each other on a mountain road where only one car can get through, the car facing uphill has the right-of-way.", options: ["True", "False"], correct: "True" },
+      { origin: "FirstTimeDriver.com", question: "You can never be cited for speeding if you do not go over the posted speed limit.", options: ["True", "False"], correct: "False" },
+      { origin: "FirstTimeDriver.com", question: "When driving within 500 to 1,000 feet of children crossing the street, what is California's standard speed limit?", options: ["15 mph", "20 mph", "25 mph", "30 mph"], correct: "25 mph" },
+      { origin: "FirstTimeDriver.com", question: "How far ahead should you scan while driving to safely detect possible hazards?", options: ["5-10 seconds", "10-15 seconds", "15-20 seconds", "20-25 seconds"], correct: "10-15 seconds" },
+      { origin: "FirstTimeDriver.com", question: "On average, it takes a car moving at 55 mph at least 400 feet for the driver to react and come to a complete stop.", options: ["True", "False"], correct: "True" },
+      { origin: "FirstTimeDriver.com", question: "A broken yellow line on the road means:", options: ["You cannot pass, but you are free to use either lane", "You can pass, but you must drive on the right side of the line", "You can pass, and you are free to use both lanes", "You cannot pass, but you are free to use both lanes"], correct: "You can pass, but you must drive on the right side of the line" },
+      { origin: "FirstTimeDriver.com", question: "If you are entering a bike lane to make a right turn or park, you must enter the lane no more than 200 feet before the turn or parking spot.", options: ["True", "False"], correct: "True" },
+      { origin: "FirstTimeDriver.com", question: "Where is it legal to make a U-turn?", options: ["Across a double yellow line", "On a divided highway with a center divider", "On a one-way street", "Both A and B are correct", "In a residential area"], correct: "In a residential area" },
+      { origin: "FirstTimeDriver.com", question: "When parking at a colored curb, white means:", options: ["You can park for a limited time, which is determined by nearby signs", "You cannot stop at all", "You can park if you are disabled or driving someone who is", "You can stop long enough to pick up or drop off passengers or mail"], correct: "You can stop long enough to pick up or drop off passengers or mail" },
+      { origin: "FirstTimeDriver.com", question: "How far away must you be from the car in front of you to stop safely in an emergency?", options: ["1 second", "3 seconds", "5 seconds", "7 seconds"], correct: "3 seconds" },
+      { origin: "Coastline Academy", question: "Do not use your high beams when you are less than 300 feet behind another vehicle, or within 500 feet of an oncoming car.", options: ["True", "False"], correct: "True" },
+      { origin: "Coastline Academy", question: "Air bags are designed to provide protection over and above what the seat belt provides.", options: ["True", "False"], correct: "True" },
+      { origin: "Coastline Academy", question: "The heat caused by the friction of moving engine parts and the explosion of gasoline in the cylinders is removed through the vehicle's cooling system.", options: ["True", "False"], correct: "True" },
+      { origin: "Coastline Academy", question: "The steering wheel is connected to and controls the direction of the rear wheels.", options: ["True", "False"], correct: "False" },
+      { origin: "Coastline Academy", question: "Do not solely rely on the side view mirrors to give you the complete picture, since all cars have blind spots. The driver should also look over the appropriate shoulder before starting the maneuver.", options: ["True", "False"], correct: "True" },
+      { origin: "Coastline Academy", question: "To get a permit you must be at least 15 1/2 years old, and your parent(s) or guardian have signed the DL 44 form.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "The written test for provisional license applicants has 46 questions; a maximum of _________ errors is allowed.", options: ["8", "10", "5"], correct: "8" },
+      { origin: "Coastline Academy", question: "If your driver's license is lost or damaged, you must go to a DMV office and pay the required fee for a duplicate.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "Your driver license will be suspended for being unable to show proof of financial responsibility (insurance) when involved in an accident.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "The court will suspend, restrict, delay, or revoke your driving privileges for one year if you are convicted of being a habitual truant from school.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "If you take a non-English or oral test, you must also complete an additional test of your ability to recognize the meaning of common traffic signs in English.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "When you apply for an original Driver License or Identification card, you must present an acceptable birth date/legal presence document and provide your social security number (SSN).", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "If you are at least 18 years old, meet the application requirements, and pass the required tests, you may be issued a California instruction permit. Your accompanying driver must be _________ or older and have a valid California driver license.", options: ["21 years of age", "25 years of age", "18 years of age"], correct: "18 years of age" },
+      { origin: "Coastline Academy", question: "To determine the length of the suspension, the Hearing Officer starts out with a base point suspension period of:", options: ["6 months", "3 months", "1 year", "2 months"], correct: "6 months" },
+      { origin: "Coastline Academy", question: "The California Vehicle Code contains the laws and regulations governing the licensing process, the expiration and renewal of a driver license, and the suspension and revocation of a driver license.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "Emancipated minors are exempt from minor's driver license restrictions.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "Physical factors that may cause accidents includes the following except:", options: ["Being angry", "Illness", "Medications"], correct: "Being angry" },
+      { origin: "Coastline Academy", question: "The speed limit is ___ MPH at intersections during the last 100 feet approaching the intersection if you cannot see the other roadways entering the intersection or in an alley way.", options: ["35", "15", "25"], correct: "25" },
+      { origin: "Coastline Academy", question: "A laned roadway has at least two clearly marked lanes for traffic going in one direction of the roadway.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "The law prohibits anyone under the age of 18 from using any type of wireless device while driving, except in an emergency situation.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "If a child is under the age of eight and less than 4 feet 9 inches in height, the child must be put in an approved safety seat in the front seat of a vehicle.", options: ["False", "True"], correct: "False" },
+      { origin: "Coastline Academy", question: "You may legally flash your headlights under certain circumstances to get the attention of another driver who may not see you.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "Unless otherwise posted, the maximum speed limit is ___ mph on a two-lane undivided highway and for vehicles towing trailers.", options: ["55", "65", "70"], correct: "55" },
+      { origin: "Coastline Academy", question: "If you need corrective eyeglasses or lenses for driving it's important to wear them because:", options: ["Seeing clearly is part of safe driving.", "Your license may be suspended or revoked if you are stopped and found to not be wearing the eye wear that's indicated on your license.", "Both are true."], correct: "Both are true." },
+      { origin: "Coastline Academy", question: "Traffic accidents are the least cause of death in the United States.", options: ["False", "True"], correct: "False" },
+      { origin: "Coastline Academy", question: "Automobile signals are the lighting devices that allow you to inform other drivers on the roadway what your intentions are.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "Proper positioning of the hands in the steering wheel is that the left hand is positioned at 10 o'clock and the right hand is positioned at 2 o'clock of the steering wheel.", options: ["False", "True"], correct: "False" },
+      { origin: "Coastline Academy", question: "Brown is used as background color for guide and information signs related to points of recreational or cultural interest and on some street name signs.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "If an oncoming vehicle has started to turn left in front of you:", options: ["Slow or stop your car to prevent a collision", "Honk your horn to warn the driver and maintain your speed.", "Maintain your speed and take your right-of-way"], correct: "Slow or stop your car to prevent a collision" },
+      { origin: "Coastline Academy", question: "If two vehicles enter an intersection from different directions at the same time and the intersection is controlled by stop signs in all directions or the signal light is not working, the driver on the ___ has the right of way.", options: ["none - just proceed when the coast is clear", "left", "right"], correct: "right" },
+      { origin: "Coastline Academy", question: "The purpose of antilock brake systems (ABSs) is to prevent the brakes from becoming locked.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "The purpose of the point count system is to alert drivers when they are in danger of being classified as a Negligent Operator of a motor vehicle.", options: ["False", "True"], correct: "True" },
+      { origin: "Coastline Academy", question: "___ factors are conditions inside of your vehicle, such as distracting passengers, loud music, and doing other things while driving, that may cause you to drive unsafely.", options: ["Physical", "Psychological", "Environmental"], correct: "Environmental" },
+      { origin: "Coastline Academy", question: "If you are in an intersection and see an emergency vehicle, stop immediately and give them the right-of-way.", options: ["False", "True"], correct: "False" }
     ];
 
-    const PASS_THRESHOLD = 0.83;
+    const PASS_THRESHOLD = 0.826;
 
     let state = {
       phase: 'welcome',
@@ -384,9 +435,9 @@
       currentIndex: 0,
       answers: {},
       answered: false,
-      questionCount: 10,
+      questionCount: 5,
       exitPending: false,
-      stats: { tests: 0, passed: 0, failed: 0, scores: [] }
+      stats: { tests: 0, passed: 0, failed: 0, scores: [], totalCorrect: 0, totalWrong: 0 }
     };
 
     const main = document.getElementById('mainContent');
@@ -471,6 +522,8 @@
       if (passed) state.stats.passed++;
       else state.stats.failed++;
       state.stats.scores.push(score);
+      state.stats.totalCorrect += correct;
+      state.stats.totalWrong += state.testQuestions.length - correct;
 
       state.phase = 'results';
       state.result = { correct, total: state.testQuestions.length, score, passed };
@@ -485,46 +538,30 @@
 
     function renderWelcome() {
       const s = state.stats;
-      const best = s.scores.length ? Math.round(Math.max(...s.scores) * 100) + '%' : '--';
-      const avg = s.scores.length ? Math.round(s.scores.reduce((a, b) => a + b, 0) / s.scores.length * 100) + '%' : '--';
-      const rate = s.tests ? Math.round(s.passed / s.tests * 100) + '%' : '--';
 
       main.innerHTML = `
-        <div class="hero">
+        <div class="hero" style="text-align:center">
           <h2>CA DMV Practice Test</h2>
-          <p>Official sample questions. You need 83% to pass.</p>
-          <div class="hero-controls">
-            <label>Questions</label>
-            <input type="range" id="qCount" min="5" max="20" value="${state.questionCount}" oninput="document.getElementById('qVal').textContent=this.value">
-            <span class="count" id="qVal">${state.questionCount}</span>
-            <button class="btn btn-primary" onclick="startTest(parseInt(document.getElementById('qCount').value))">Start Test</button>
+          <p>Choose how many questions to practice:</p>
+          <div class="quick-btn-row">
+            <button class="quick-btn" onclick="startTest(5)">5</button>
+            <button class="quick-btn" onclick="startTest(10)">10</button>
+            <button class="quick-btn" onclick="startTest(20)">20</button>
+          </div>
+          <div class="quick-btn-row">
+            <button class="quick-btn" onclick="startTest(36)">36 (18+)</button>
+            <button class="quick-btn" onclick="startTest(47)">47 (Under 18)</button>
+          </div>
+          <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.75rem">
+            18+: 36 questions, need 30 correct &nbsp;·&nbsp; Under 18: 46 questions, need 38 correct
           </div>
         </div>
 
         <div class="stats-row">
           <div class="stat"><div class="value">${QUESTIONS.length}</div><div class="label">Questions</div></div>
           <div class="stat"><div class="value">${s.tests}</div><div class="label">Tests Taken</div></div>
-          <div class="stat"><div class="value">${best}</div><div class="label">Best Score</div></div>
-          <div class="stat"><div class="value">${rate}</div><div class="label">Pass Rate</div></div>
-        </div>
-
-        <div class="quick-start">
-          <h3>Quick Start</h3>
-          <div class="quick-buttons">
-            <button class="quick-btn" onclick="startTest(5)">5 Questions</button>
-            <button class="quick-btn" onclick="startTest(10)">10 Questions</button>
-            <button class="quick-btn" onclick="startTest(15)">15 Questions</button>
-            <button class="quick-btn" onclick="startTest(20)">20 Questions</button>
-          </div>
-        </div>
-
-        <div class="quick-start">
-          <h3>Session Stats</h3>
-          <div style="display: flex; gap: 2rem; font-size: 0.875rem; color: var(--text-secondary);">
-            <span>Avg: <strong style="color: var(--text)">${avg}</strong></span>
-            <span>Passed: <strong style="color: var(--success)">${s.passed}</strong></span>
-            <span>Failed: <strong style="color: var(--danger)">${s.failed}</strong></span>
-          </div>
+          <div class="stat"><div class="value">${s.totalCorrect}</div><div class="label">Correct</div></div>
+          <div class="stat"><div class="value">${s.totalWrong}</div><div class="label">Wrong</div></div>
         </div>
       `;
     }
@@ -618,7 +655,7 @@
             <tr><th>Correct</th><td>${r.correct}</td><td style="color: var(--text-secondary)">Need ${needed}</td></tr>
             <tr><th>Wrong</th><td>${r.total - r.correct}</td><td style="color: var(--text-secondary)">Max ${r.total - needed} allowed</td></tr>
           </table>
-          <button class="btn btn-primary" onclick="startTest()">Take Another Test</button>
+          <button class="btn btn-primary" onclick="state.phase='welcome';state.exitPending=false;render()">Back to Home</button>
         </div>
         <div style="font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem;">Review</div>
         ${reviewHtml}
